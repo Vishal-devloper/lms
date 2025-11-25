@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\InstructorController;
 use App\Http\Controllers\backend\InstructorProfileController;
@@ -17,6 +18,13 @@ Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login')
 Route::middleware(['auth','verified','role:admin'])->prefix('admin')->name('admin.')->group(function(){
     Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
     Route::post('/logout',[AdminController::class,'destroy'])->name('logout');
+
+    // Admin Profile
+    Route::get('/profile',[AdminProfileController::class,'index'])->name('profile');
+    Route::post('/profile/store',[AdminProfileController::class,'store'])->name('profile.store');
+    Route::get('/setting',[AdminProfileController::class,'setting'])->name('setting');
+    Route::post('/password/setting',[AdminProfileController::class,'passwordSetting'])->name('passwordSetting');
+
 });
 
 // Instructor Login
@@ -31,6 +39,7 @@ Route::middleware(['auth','verified','role:instructor'])->prefix('instructor')->
     Route::get('/profile',[InstructorProfileController::class,'index'])->name('profile');
     Route::post('/profile/store',[InstructorProfileController::class,'store'])->name('profile.store');
     Route::get('/setting',[InstructorProfileController::class,'setting'])->name('setting');
+    Route::post('/password/setting',[InstructorProfileController::class,'passwordSetting'])->name('passwordSetting');
 
    
     

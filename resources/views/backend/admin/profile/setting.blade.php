@@ -1,4 +1,4 @@
-@extends('backend.instructor.master')
+@extends('backend.admin.master')
 @section('content')
     <!--start page content -->
 
@@ -22,11 +22,11 @@
             <div class="main-body">
                 <div class="row">
 
-                    @include('backend.instructor.profile.sidebar')
+                    @include('backend.admin.profile.sidebar')
 
                     <div class="col-lg-8">
                         <div class="card">
-                            <form action="{{ route('instructor.passwordSetting') }}" method="post">
+                            <form action="{{ route('admin.passwordSetting') }}" method="post">
                                 @csrf
                                 @if ($errors->any())
                                 <div class="alert alert-danger">
