@@ -27,7 +27,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        
         // Role Logic
         $user=$request->user();
         if($user->isAdmin()){
