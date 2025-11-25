@@ -111,9 +111,8 @@
                                             <h6 class="mb-0">Bio</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <textarea name="bio" id="" rows="5" class="form-control">
+                                            <input name="bio" type="text" value="{{ Auth()->user()->bio }}" class="form-control"/>
 
-                                            </textarea>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
