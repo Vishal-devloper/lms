@@ -23,12 +23,12 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
                 </div>
-                <div class="menu-title">Application</div>
+                <div class="menu-title">Managed Category</div>
             </a>
             <ul>
-                <li> <a href="app-emailbox.html"><i class='bx bx-radio-circle'></i>Email</a>
+                <li> <a href="{{ route('admin.category.index') }}"><i class='bx bx-radio-circle'></i>Category</a>
                 </li>
-                <li> <a href="app-chat-box.html"><i class='bx bx-radio-circle'></i>Chat Box</a>
+                <li> <a href="{{ route('admin.subCategory.index') }}"><i class='bx bx-radio-circle'></i>SubCategory</a>
                 </li>
                 <li> <a href="app-file-manager.html"><i class='bx bx-radio-circle'></i>File Manager</a>
                 </li>

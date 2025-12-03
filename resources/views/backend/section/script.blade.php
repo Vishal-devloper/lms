@@ -10,7 +10,13 @@
 <script src="{{ asset('backend/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
 <script src="{{ asset('backend/assets/plugins/chartjs/js/chart.js') }}"></script>
 <script src="{{ asset('backend/assets/js/index.js') }}"></script>
+<script src="{{ asset('backend/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('backend/assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js"></script>
+
+
+
+	
 <!--Password show & hide js -->
 <script>
     $(document).ready(function () {
@@ -76,3 +82,11 @@
         });
     @endif
 </script>
+
+<script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
+
+@stack('scripts')
