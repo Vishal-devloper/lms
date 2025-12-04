@@ -9,11 +9,11 @@
         <div class="card col-md-8">
             <div class="card-body p-4">
                 <div class="d-flex align-items-center justify-content-between">
-                    <h5 class="mb-4">Update Category</h5>
-                    <a href="{{ route('admin.category.index') }}" class="btn btn-primary">Back</a>
+                    <h5 class="mb-4">Update SubCategory</h5>
+                    <a href="{{ route('admin.subCategory.index') }}" class="btn btn-primary">Back</a>
                 </div>
-                <form class="row g-3" method="post" enctype="multipart/form-data"
-                    action="{{ route('admin.category.update', $category->id) }}">
+                <form class="row g-3" method="post" 
+                    action="{{ route('admin.subCategory.update', $subCategory->id) }}">
                     @csrf
                     @method('PUT')
                     @if ($errors->any())
@@ -29,21 +29,21 @@
                     <div class="col-md-6">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="Category Name"
-                            value="{{ $category->name }}">
+                            value="{{ $subCategory->name }}">
                     </div>
                     <div class="col-md-6">
                         <label for="slug" class="form-label">Slug</label>
                         <input type="text" class="form-control" name="slug" id="slug" placeholder="Unique Slug"
-                            value="{{ $category->slug }}" readonly>
+                            value="{{ $subCategory->slug }}" readonly>
                     </div>
                     <div class="col-md-6">
-                        <label for="image" class="form-label">Image</label>
-                        <input type="file" class="form-control" name="photo" id="photo" />
-                    </div>
-
-                    <div class="col-md-6">
-                        <img src="{{ $category->photo ? asset($category->photo) :'' }}" id="photoPreview" height="60" width="60"
-                            style="margin-top: 15px;" alt="Image">
+                        <label for="category_id" class="form-label">Category</label>
+                        <select name="category_id" id="" class="form-control">
+                            <option value="" disabled>Select Category</option>
+                            @foreach ($all_categories as $item)
+                                <option value="{{ $item->id }}" {{ $item->id == $subCategory->category_id?'selected':'' }} >{{ $item->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="col-md-12">
