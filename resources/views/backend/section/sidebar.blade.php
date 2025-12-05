@@ -11,7 +11,7 @@
     </div>
     <!--navigation-->
     <ul class="metismenu" id="menu">
-        <li>
+        <li class="{{ setSidebar(['admin.dashboard']) }}">
             <a href="javascript:;" class="">
                 <div class="parent-icon"><i class='bx bx-category'></i>
                 </div>
@@ -19,27 +19,18 @@
             </a>
             
         </li>
-        <li>
+        <li class="{{ setSidebar(['admin.category*','admin.subCategory*']) }}">
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
                 </div>
                 <div class="menu-title">Managed Category</div>
             </a>
             <ul>
-                <li> <a href="{{ route('admin.category.index') }}"><i class='bx bx-radio-circle'></i>Category</a>
+                <li class="{{ setSidebar(['admin.category*']) }}"> <a href="{{ route('admin.category.index') }}"><i class='bx bx-radio-circle'></i>Category</a>
                 </li>
-                <li> <a href="{{ route('admin.subCategory.index') }}"><i class='bx bx-radio-circle'></i>SubCategory</a>
+                <li class="{{ setSidebar(['admin.subCategory*']) }}"> <a href="{{ route('admin.subCategory.index') }}"><i class='bx bx-radio-circle'></i>SubCategory</a>
                 </li>
-                <li> <a href="app-file-manager.html"><i class='bx bx-radio-circle'></i>File Manager</a>
-                </li>
-                <li> <a href="app-contact-list.html"><i class='bx bx-radio-circle'></i>Contatcs</a>
-                </li>
-                <li> <a href="app-to-do.html"><i class='bx bx-radio-circle'></i>Todo List</a>
-                </li>
-                <li> <a href="app-invoice.html"><i class='bx bx-radio-circle'></i>Invoice</a>
-                </li>
-                <li> <a href="app-fullcalender.html"><i class='bx bx-radio-circle'></i>Calendar</a>
-                </li>
+                
             </ul>
         </li>
         
