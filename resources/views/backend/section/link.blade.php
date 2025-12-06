@@ -24,23 +24,4 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css">
 
-    <style>
-        html{
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-    </style>
-    <script>
-        (function(){
-            if(localStorage.getItem("theme")==="dark"){
-                document.documentElement.classList.add("dark-theme");
-            }
-            else{
-                document.documentElement.classList.add("light-theme");
-            }
-            document.documentElement.style.visibility="visible";
-            document.documentElement.style.opacity="1";
-        })();
-
-    </script>
+    

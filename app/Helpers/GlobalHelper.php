@@ -1,5 +1,16 @@
 <?php
 
+use App\Models\Category;
+
+// Category using global helper
+if(!function_exists('getCategories')){
+    function getCategories()
+    {
+        return Category::with('subcategory')->orderBy('name','asc')->get();
+    }
+}
+
+
 // Set sidebar active
 
 if(!function_exists('setSidebar')){

@@ -5,6 +5,7 @@ use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\InstructorController;
 use App\Http\Controllers\backend\InstructorProfileController;
+use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\SubCategoryController;
 use App\Http\Controllers\frontend\FrontendDashboardController;
 use App\Http\Controllers\ProfileController;
@@ -27,6 +28,9 @@ Route::middleware(['auth','verified','role:admin'])->prefix('admin')->name('admi
     Route::post('/password/setting',[AdminProfileController::class,'passwordSetting'])->name('passwordSetting');
     Route::resource('category',CategoryController::class);
     Route::resource('subCategory',SubCategoryController::class);
+
+    // Manage Slider controller
+    Route::resource('slider',SliderController::class);
 
 });
 
