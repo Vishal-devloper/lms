@@ -2,6 +2,7 @@
 
 @section('content')
 
-
+{{-- Hero Section --}}
+@include('frontend.section.hero')
 
 @endsection
