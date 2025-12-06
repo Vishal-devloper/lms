@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\InfoController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\CategoryController;
@@ -31,6 +32,9 @@ Route::middleware(['auth','verified','role:admin'])->prefix('admin')->name('admi
 
     // Manage Slider controller
     Route::resource('slider',SliderController::class);
+
+    // Manage Info box controller
+    Route::resource('info',InfoController::class);
 
 });
 
